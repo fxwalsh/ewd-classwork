@@ -1,0 +1,44 @@
+openapi: 3.0.0
+info:
+  version: '1'
+  title: 'Doggie-Day-Care'
+  description: ''
+paths:
+  /api/dogs:
+    get:
+      summary: Returns a lost of dogs
+      responses:
+        '200':
+          description: List of dogs
+          content:
+            application/json:
+              example: [{name:"eddie", breed:"mongrel"}]
+    post:
+      summary: Add a dog
+      responses:
+        '201':
+          description: 'Successfully added new Dog'
+          content:
+            application/json:
+              schema:
+                type: object
+                example: { id: 181808, name: "Eddie", type: "Mongrel",size: "Medium"}
+        '405':
+          description: "405 Error"
+          content: 
+            application/json:
+              schema:
+                type: object
+                example: {message: "Invalid Dog Data", code: 405}
+      
+
+# Added by API Auto Mocking Plugin
+servers:
+# Added by API Auto Mocking Plugin
+# Added by API Auto Mocking Plugin
+  - description: SwaggerHub API Auto Mocking
+    url: https://virtserver.swaggerhub.com/fxwalsh/class-ref/1
+  - description: SwaggerHub API Auto Mocking
+    url: https://virtserver.swaggerhub.com/fxwalsh/Doggie-Day-Care/1
+  - description: SwaggerHub API Auto Mocking
+    url: https://virtserver.swaggerhub.com/fxwalsh/Doggie-Day-Care/1/api
